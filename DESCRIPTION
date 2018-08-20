@@ -1,0 +1,23 @@
+Package: GoeFlexStatCrawler
+Type: Package
+Title: Downloading and analysing available on the FlexStat-Homepage of the Georg-August University Goettingen
+Version: 0.1.0
+Date: 2018-09-03
+Authors@R: person("Gerle", "Simone", email = "simone.gerle@stud.uni-goettingen.d",role = c("aut", "cre"))
+           person("Wutke", "Martin", email = "simone.gerle@stud.uni-goettingen.d",role = c("aut", "cre"))
+Maintainer: Simone Gerle <simone.gerle@stud.uni-goettingen.de>
+Description: Ausführliche Beschreibung des Package
+    Use four spaces when indenting paragraphs within the Description.
+Depends: R (>= 3.5.0)
+Imports:dplyr,
+    ggplot2,
+    httr,
+    jsonlite,
+    stringr,
+    tidyr,
+    zoo
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
+
