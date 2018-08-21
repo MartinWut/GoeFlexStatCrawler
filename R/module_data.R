@@ -7,7 +7,7 @@
 #' @export
 
 module_data <- function(semester_nr, faculty_nr, module_nr){
-  results_file <- readChar("json/request.json", file.info("json/request.json")$size)
+  results_file <- requestJSON_file
 
   semester_list <- paste('"lastValue":"', semester_nr, '"')
   results_list <- sub('"lastValue":"60"',semester_list, results_file)
