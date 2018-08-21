@@ -2,12 +2,6 @@
 #'
 #' @description Description text here
 #' @usage  Usage text here
-#' @import httr
-#' @import jsonlite
-#' @import dplyr
-#' @import ggplot2
-#' @import stringr
-#' @import tidyr
 #' @param semester The expression for the semesterterm. The default value is all semesters
 #' @return Data.Frame of semester numbers corresponding to the semesterterm
 #' @export
