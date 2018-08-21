@@ -14,7 +14,7 @@ single_request <- function(Semester, Fakultät, Modul){
   faculty_all <- faculty_data("all")
 
   resultsURL <- "https://pruefungsverwaltung.uni-goettingen.de/statistikportal/api/queryexecution/results"
-  requestJSON <- readChar("json/request.json", file.info("json/request.json")$size)
+  requestJSON <- requestJSON_file
 
   records <- data.frame(matrix(nrow = 0, ncol = 21))
 
