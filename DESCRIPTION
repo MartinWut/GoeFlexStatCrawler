@@ -8,13 +8,19 @@ Authors@R: person("Gerle", "Simone", email = "simone.gerle@stud.uni-goettingen.d
 Maintainer: Simone Gerle <simone.gerle@stud.uni-goettingen.de>
 Description: Ausführliche Beschreibung des Package
     Use four spaces when indenting paragraphs within the Description.
-Imports:dplyr,
+    dplyr,
     ggplot2,
     jsonlite,
     stringr,
     tidyr,
     zoo
 Depends: httr
+    dplyr,
+    ggplot2,
+    jsonlite,
+    stringr,
+    tidyr,
+    zoo
 License: MIT
 Encoding: UTF-8
 LazyData: true
