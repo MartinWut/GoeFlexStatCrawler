@@ -52,12 +52,6 @@ faculty_mean <- function(faculty_nr, download=FALSE, FacData=NA){ # download= FA
   #class(result) <- append(class(result), "faculty_mean")
   attr(result, "class") <- "fac_mean"
 
-  # define the output for the S3-class fac_mean
-  print.fac_mean <- function(obj){
-    cat("Mean = ", obj$Mean,"\n")
-    cat("Faculty = ", obj$Faculty, "\n")
-  }
-
   # return the result
   result
 }
