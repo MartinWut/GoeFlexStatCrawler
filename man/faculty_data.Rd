@@ -11,9 +11,6 @@ faculty_data(faculty_name)
 \arguments{
 \item{faculty_name}{A is an object of the class character. If faculty_name = "all" all facultynumbers are displayed. If a single faculty-name is entered, it has to be the same expression that is used on the FlexStat-Platform.}
 }
-\value{
-A data.frame containing the faculty-labels and the faculty-numbers.
-}
 \description{
 This is a function to download and display the faculty-number corresponding to a certain faculty-name for the FlexStat-Platform at the  Goerg-August University.
 }
@@ -37,5 +34,5 @@ Wirtschaftswissenschaftliche Fakultät                12
 }
 \examples{
 faculty_data("all") # Downloading all faculty-numbers
-faculty_data("Philosophische Fakultät") # Donloading a single faculty-number
+faculty_data("Philosophische Fakultät") # Downloading a single faculty-number
 }

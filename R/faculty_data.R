@@ -5,7 +5,6 @@
 #'     ## Default method:
 #'     faculty_data(faculty_name = "all)
 #' @param faculty_name A is an object of the class character. If faculty_name = "all" all facultynumbers are displayed. If a single faculty-name is entered, it has to be the same expression that is used on the FlexStat-Platform.
-#' @return A data.frame containing the faculty-labels and the faculty-numbers.
 #' @details FlexStat stores every faculty under a certain value. These values have to be used for all function of the GoeFlexStatCrawler-Package.
 #' Below are faculty-labels and the corresponding faculty-numbers
 #' Fakultät für Agrarwissenschaften                     11
@@ -22,9 +21,9 @@
 #' Sozialwissenschaftliche Fakultät                     13
 #' Theologische Fakultät                                1
 #' Wirtschaftswissenschaftliche Fakultät                12
-#' @export
 #' @examples faculty_data("all") # Downloading all faculty-numbers
-#' faculty_data("Philosophische Fakultät") # Donloading a single faculty-number
+#' faculty_data("Philosophische Fakultät") # Downloading a single faculty-number
+#' @export
 
 faculty_data <- function(faculty_name="all"){# input either "all" or a certain faculty (e.g. "Wirtschaftswissenschaftliche Fakultät ")
   faculty_get <- GET("https://pruefungsverwaltung.uni-goettingen.de/statistikportal/api/dropdownvalues?_dc=1525710916300&type=FAK&path=&selectAllDummy=false&forQueryId=215&page=1&start=0&limit=25")
