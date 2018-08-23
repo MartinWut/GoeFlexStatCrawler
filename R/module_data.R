@@ -7,6 +7,24 @@
 #' @export
 
 module_data <- function(semester_nr, faculty_nr, module_nr){
+
+
+  # create error messages for wrong data input
+  # check semester value
+  if (any(grepl(semester, semester_df$value)) == FALSE){
+    stop("The chosen semester value was not entered in the correct form or does not exist.")
+  }
+
+  # check faculty value
+  if (any(grepl(faculty, faculty_df$value)) == FALSE){
+    stop("The chosen faculty value was not entered in the correct form or does not exist.")
+  }
+
+  # check module value
+  module_list <- list_modules(faculty)
+  if (any(grepl(module, module_list$value)) == FALSE){
+    stop("The chosen module value was not entered in the correct form or does not exist for the chosen faculty.")
+  }
   results_file <- requestJSON_file
 
   semester_list <- paste('"lastValue":"', semester_nr, '"')
