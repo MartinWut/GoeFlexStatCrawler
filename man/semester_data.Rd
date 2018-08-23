@@ -8,7 +8,7 @@ semester_data(semester)
 
     ## Default method:
 
-    faculty_data(semester = "all")
+    semester_data(semester = "all")
 }
 \arguments{
 \item{semester}{A is an object of the class character. If semester = "all" all semester-numbers are displayed. If a single semester is entered, it has to be the same expression that is used on the FlexStat-Platform.}
@@ -20,17 +20,18 @@ Data.Frame of semester-numbers corresponding to the semesterterm
 This is a function to download and display the semester-number corresponding to a certain semester for the FlexStat-Platform at the Goerg-August University in Goettingen.
 }
 \details{
-FlexStat stores every faculty under a certain value. These values have to be used for all function of the GoeFlexStatCrawler-Package.
-Below are faculty-labels and the corresponding faculty-numbers
-WS 2003/2004    38
+FlexStat stores every semester under a certain value. These values have to be used for all function of the GoeFlexStatCrawler-Package.
+Below are semester-labels and the corresponding semester-numbers
 
-SS 2004         39
+"WS 2003/2004"    38
+
+"SS 2004"         39
 
 ...
 
-SS 2019         69
+"SS 2019"         69
 
-WS 2019/2020    70
+"WS 2019/2020"    70
 }
 \examples{
 semester_data("all") # Downloading all semester-numbers

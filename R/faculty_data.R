@@ -1,6 +1,6 @@
 #' faculty_data
 #'
-#' @description This is a function to download and display the faculty-number corresponding to a certain faculty-name for the FlexStat-Platform at the  Goerg-August University.
+#' @description This is a function to download and display the faculty-number corresponding to a certain faculty-name for the FlexStat-Platform of the Goerg-August University in Goettingen.
 #' @usage faculty_data(faculty_name)
 #'
 #'     ## Default method:

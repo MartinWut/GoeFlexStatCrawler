@@ -14,7 +14,7 @@ faculty_data(faculty_name)
 \item{faculty_name}{A is an object of the class character. If faculty_name = "all" all facultynumbers are displayed. If a single faculty-name is entered, it has to be the same expression that is used on the FlexStat-Platform.}
 }
 \description{
-This is a function to download and display the faculty-number corresponding to a certain faculty-name for the FlexStat-Platform at the  Goerg-August University.
+This is a function to download and display the faculty-number corresponding to a certain faculty-name for the FlexStat-Platform of the Goerg-August University in Goettingen.
 }
 \details{
 FlexStat stores every faculty under a certain value. These values have to be used for all function of the GoeFlexStatCrawler-Package.

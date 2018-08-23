@@ -7,8 +7,14 @@
 faculty_down(facultyNr)
 }
 \arguments{
-\item{facultyNr}{A numeric value corresponding to a certain faculty. See the function faculty_data to get all facultynumbers.}
+\item{facultyNr}{A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty-numbers.}
+}
+\value{
+A list containing the data of all modules for a certain faculty. Every list-element contains the data for a single module over all semesters.
 }
 \description{
-Downloads the data for all modules of a faculty. The data can than be used for further analysis.
+This function downloads the data for all modules of a faculty. The data can then be used for further analysis.
+}
+\examples{
+faculty_down(12) # downloads the data for the economic faculty
 }

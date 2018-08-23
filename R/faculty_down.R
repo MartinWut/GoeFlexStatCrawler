@@ -1,10 +1,10 @@
 #' faculty_down
 #'
-#' @description Downloads the data for all modules of a faculty. The data can than be used for further analysis.
+#' @description This function downloads the data for all modules of a faculty. The data can then be used for further analysis.
 #' @usage faculty_down(facultyNr)
-#' @param facultyNr A numeric value corresponding to a certain faculty. See the function faculty_data to get all facultynumbers.
-#' @return
-#' @examples
+#' @param facultyNr A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty-numbers.
+#' @return A list containing the data of all modules for a certain faculty. Every list-element contains the data for a single module over all semesters.
+#' @examples faculty_down(12) # downloads the data for the economic faculty
 #' @export
 
 # Help-function, needed for the faculty_down_function

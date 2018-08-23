@@ -5,7 +5,9 @@
 \title{faculty_mean}
 \usage{
 faculty_mean(faculty_nr, download, FacData)
+
    ## Default method:
+
    module_mean(faculty_nr, download=FALSE, FacData=NA)
 }
 \arguments{
@@ -15,6 +17,17 @@ faculty_mean(faculty_nr, download, FacData)
 
 \item{FacData}{A List containing the faculty data. Typically produced by the function faculty_down.}
 }
+\value{
+The Return is an object of class "fac_mean" and contains the mean value of the faculty and the faculty-name.
+}
 \description{
-Function for computing the mean value of a faculty.
+This is a function for computing the mean value of a faculty.
+}
+\examples{
+# Computing the mean for the economic faculty without providing any data in advance
+faculty_mean(12, download = TRUE)
+
+# Downloading the data for economic faculty using the faculty_down-function
+economic_data <- faculty_down(12)
+faculty_mean(12, download = FALSE, FacData = economic_data)
 }
