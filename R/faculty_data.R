@@ -3,7 +3,7 @@
 #' @description This is a function to download and display the faculty-number corresponding to a certain faculty-name for the FlexStat-Platform at the  Goerg-August University.
 #' @usage faculty_data(faculty_name)
 #'     ## Default method:
-#'     faculty_data(faculty_name = "all)
+#'     faculty_data(faculty_name = "all")
 #' @param faculty_name A is an object of the class character. If faculty_name = "all" all facultynumbers are displayed. If a single faculty-name is entered, it has to be the same expression that is used on the FlexStat-Platform.
 #' @details FlexStat stores every faculty under a certain value. These values have to be used for all function of the GoeFlexStatCrawler-Package.
 #' Below are faculty-labels and the corresponding faculty-numbers

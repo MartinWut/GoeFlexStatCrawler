@@ -6,7 +6,7 @@
 \usage{
 faculty_data(faculty_name)
     ## Default method:
-    faculty_data(faculty_name = "all)
+    faculty_data(faculty_name = "all")
 }
 \arguments{
 \item{faculty_name}{A is an object of the class character. If faculty_name = "all" all facultynumbers are displayed. If a single faculty-name is entered, it has to be the same expression that is used on the FlexStat-Platform.}
