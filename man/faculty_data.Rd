@@ -53,5 +53,5 @@ faculty_data("all") # Downloading all faculty-numbers
 faculty_data("Philosophische Fakultät") # Downloading a single faculty-number
 }
 \seealso{
-semester_data.R
+semester_data()
 }
