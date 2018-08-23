@@ -1,6 +1,6 @@
 #' faculty_mean
 #'
-#' @description This is a function for computing the mean value of a faculty.
+#' @description This is a function for computing the mean value of a faculty over all semesters.
 #' @usage faculty_mean(faculty_nr, download, FacData)
 #'
 #'    ## Default method:

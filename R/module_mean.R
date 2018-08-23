@@ -1,14 +1,21 @@
 #' module_mean
 #'
-#' @description Function for computing the mean value of a specific module
+#' @descriptionThe The function downloads the data for a specific module and computes the mean value of this module dependent on the semester-input.
+#' By default the functio considers all semesters.
 #' @usage module_mean(semester_vector, faculty_nr, module_nr)
+#'
 #'    ## Default method:
+#'
 #'    module_mean(semester_vector = "all", faculty_nr= NA, module_nr=NA)
-#' @param semester_vector A vector of numeric values. The default value takes all semesters.
-#' @param faculty_nr A numeric value corresponding to a certain faculty. See the function faculty_data to get all facultynumbers.
+#' @param semester_vector A vector of numeric values containing the semester-numbers . By default all semesters are considered. Use the function semester_data to get the specific values.
+#' @param faculty_nr A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty-numbers.
 #' @param module_nr A numeric value corresponding to a certain module. See the function list_modules to get all modulenumbers.
-#' @return
-#' @examples
+#' @return An object of the class "module_mean" containing the mean value of the selected module and the module-name.
+#' @examples # Compute the mean value for the introductory course in statistics at the economic faculty over all semesters.
+#'
+#' #' faculty_data() # the required faculty-number is 12
+#' list_modules(12) # the required module-number is 109
+#' module_mean("all", faculty_nr = 12, module_nr = 109)
 #' @export
 
 module_mean <- function(semester_vector = "all", faculty_nr= NA, module_nr=NA){

@@ -21,7 +21,7 @@ faculty_mean(faculty_nr, download, FacData)
 The Return is an object of class "fac_mean" and contains the mean value of the faculty and the faculty-name.
 }
 \description{
-This is a function for computing the mean value of a faculty.
+This is a function for computing the mean value of a faculty over all semesters.
 }
 \examples{
 # Computing the mean for the economic faculty without providing any data in advance

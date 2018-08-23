@@ -5,16 +5,28 @@
 \title{module_mean}
 \usage{
 module_mean(semester_vector, faculty_nr, module_nr)
+
    ## Default method:
+
    module_mean(semester_vector = "all", faculty_nr= NA, module_nr=NA)
 }
 \arguments{
-\item{semester_vector}{A vector of numeric values. The default value takes all semesters.}
+\item{semester_vector}{A vector of numeric values containing the semester-numbers . By default all semesters are considered. Use the function semester_data to get the specific values.}
 
-\item{faculty_nr}{A numeric value corresponding to a certain faculty. See the function faculty_data to get all facultynumbers.}
+\item{faculty_nr}{A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty-numbers.}
 
 \item{module_nr}{A numeric value corresponding to a certain module. See the function list_modules to get all modulenumbers.}
 }
+\value{
+An object of the class "module_mean" containing the mean value of the selected module and the module-name.
+}
 \description{
-Function for computing the mean value of a specific module
+module_mean
+}
+\examples{
+# Compute the mean value for the introductory course in statistics at the economic faculty over all semesters.
+
+#' faculty_data() # the required faculty-number is 12
+list_modules(12) # the required module-number is 109
+module_mean("all", faculty_nr = 12, module_nr = 109)
 }
