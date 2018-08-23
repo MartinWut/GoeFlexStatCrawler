@@ -37,6 +37,7 @@
 #' Theologische Fakultät                                1
 #'
 #' Wirtschaftswissenschaftliche Fakultät                12
+#' @seealso semester_data.R
 #' @examples faculty_data("all") # Downloading all faculty-numbers
 #' faculty_data("Philosophische Fakultät") # Downloading a single faculty-number
 #' @export
