@@ -11,12 +11,12 @@ module_data <- function(semester_nr, faculty_nr, module_nr){
 
   # create error messages for wrong data input
   # check semester value
-  if (any(grepl(semester_nr, semester_df$value)) == FALSE){
+  if (any(grepl(semester_nr, semester_data("all")$value)) == FALSE){
     stop("The chosen semester value was not entered in the correct form or does not exist.")
   }
 
   # check faculty value
-  if (any(grepl(faculty_nr, faculty_df$value)) == FALSE){
+  if (any(grepl(faculty_nr, faculty_data("all")$value)) == FALSE){
     stop("The chosen faculty value was not entered in the correct form or does not exist.")
   }
 
