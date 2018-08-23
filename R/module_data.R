@@ -1,9 +1,18 @@
 #' module_data
 #'
-#' @description The function downloads the data for a specific module given the semester-, faculty- and modulenumber.
-#' @param semester_nr A numeric value corresponding to a certain semester. See the function semester_data to get all semesternumbers.
-#' @param faculty_nr A numeric value corresponding to a certain faculty. See the function faculty_data to get all facultynumbers.
-#' @param module_nr A numeric value corresponding to a certain module. See the function list_modules to get all modulenumbers.
+#' @description The function downloads the data for a specific module given the semester-, faculty- and module-number.
+#' @usage module_data(semester_nr, faculty_nr, module_nr)
+#' @param semester_nr A numeric value corresponding to a certain semester. See the function semester_data to get all semester-numbers.
+#' @param faculty_nr A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty-numbers.
+#' @param module_nr A numeric value corresponding to a certain module. See the function list_modules to get all modulen-umbers.
+#' @return The result is a data.frame containing the data for a module for one semester. Depending on the module, it is possible that there are several rows, containing the data for several exam dates.
+#' @examples  # Download the data for the introductory course in statistics at the economic faculty for the summer semester 2017.
+#' # First get the information for specific semester-, faculty- and module-number
+#'
+#' semester_data() # the required semester-number is 65
+#' faculty_data() # the required faculty-number is 12
+#' list_modules(12) # the required module-number is 109
+#' module_data(65,12,109)
 #' @export
 
 module_data <- function(semester_nr, faculty_nr, module_nr){
@@ -43,7 +52,7 @@ module_data <- function(semester_nr, faculty_nr, module_nr){
   responseJSON <- content(response, encoding = "UTF-8", type = "text")
   responseDF <- fromJSON(responseJSON)$data$records
 
-  # ordnen der Spalten (nur, wenn der resultierende Data.Frame nicht leer ist)
+  # Rearrange the rows (only, if the resulting data.frame isn't empty)
   if(length(responseDF) != 0 ){
     responseDF <- responseDF[,c(17,12,2,15,20,14,3,18,5,4,6,21,7,16,1,8,13,19,9,11,10)]
   }

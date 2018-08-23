@@ -1,7 +1,16 @@
 #' list_modules
 #'
-#' @description The function downloads the faculty-specific module-information
+#' @description This function downloads the module-label and module-number for all modules of a faculty.
+#' @usage list_modules(faculty)
 #' @param faculty A numeric value corresponding to a certain faculty. Use the function faculty_data() to display all faculty numbers.
+#' @return A data.frame containing the module-label and module-number.
+#' @examples # Download the module-information for the economic faculty
+#'
+#' list_modules(12)
+#'
+#' # Download the module-information for the medical faculty
+#'
+#' list_modules(3)
 #' @export
 
 list_modules <- function(faculty){

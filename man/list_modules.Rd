@@ -9,6 +9,18 @@ list_modules(faculty)
 \arguments{
 \item{faculty}{A numeric value corresponding to a certain faculty. Use the function faculty_data() to display all faculty numbers.}
 }
+\value{
+A data.frame containing the module-label and module-number.
+}
 \description{
-The function downloads the faculty-specific module-information
+This function downloads the module-label and module-number for all modules of a faculty.
+}
+\examples{
+# Download the module-information for the economic faculty
+
+list_modules(12)
+
+# Download the module-information for the medical faculty
+
+list_modules(3)
 }
