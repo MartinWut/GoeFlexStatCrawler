@@ -11,18 +11,18 @@ module_data <- function(semester_nr, faculty_nr, module_nr){
 
   # create error messages for wrong data input
   # check semester value
-  if (any(grepl(semester, semester_df$value)) == FALSE){
+  if (any(grepl(semester_nr, semester_df$value)) == FALSE){
     stop("The chosen semester value was not entered in the correct form or does not exist.")
   }
 
   # check faculty value
-  if (any(grepl(faculty, faculty_df$value)) == FALSE){
+  if (any(grepl(faculty_nr, faculty_df$value)) == FALSE){
     stop("The chosen faculty value was not entered in the correct form or does not exist.")
   }
 
   # check module value
-  module_list <- list_modules(faculty)
-  if (any(grepl(module, module_list$value)) == FALSE){
+  module_list <- list_modules(faculty_nr)
+  if (any(grepl(module_nr, module_list$value)) == FALSE){
     stop("The chosen module value was not entered in the correct form or does not exist for the chosen faculty.")
   }
   results_file <- requestJSON_file
