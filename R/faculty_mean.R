@@ -2,7 +2,7 @@
 #'
 #' @description Function for computing the mean value of a faculty.
 #' @usage faculty_mean(faculty_nr, download, FacData)
-#'    ## Default S3 method:
+#'    ## Default method:
 #'    module_mean(faculty_nr, download=FALSE, FacData=NA)
 #' @param faculty_nr A numeric value corresponding to a certain semester. See the function semester_data to get all semesternumbers.
 #' @param download Logical. If TRUE the corresponding data is downloaded and used for computing the faculty mean value. If False the faculty data has to be provided using the function faculty_down in the first place.

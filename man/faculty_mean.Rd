@@ -5,7 +5,7 @@
 \title{faculty_mean}
 \usage{
 faculty_mean(faculty_nr, download, FacData)
-   ## Default S3 method:
+   ## Default method:
    module_mean(faculty_nr, download=FALSE, FacData=NA)
 }
 \arguments{

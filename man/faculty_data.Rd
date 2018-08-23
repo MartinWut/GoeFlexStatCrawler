@@ -4,8 +4,34 @@
 \alias{faculty_data}
 \title{faculty_data}
 \usage{
-faculty_data(x)
+faculty_data(faculty_name)
+    ## Default method:
+    faculty_data(faculty_name = "all)
+}
+\arguments{
+\item{faculty_name}{A is an object of the class character. If faculty_name = "all" all facultynumbers are displayed. If a single faculty-name is entered, it has to be the same expression that is used on the FlexStat-Platform.}
+}
+\value{
+A data.frame containing the faculty-labels and the faculty-numbers
 }
 \description{
-The function loads the faculty information from FlexStat-platform
+This is a function to download and display the faculty-number corresponding to a certain faculty-name for the FlexStat-Platform at the  Goerg-August University.
+}
+\details{
+FlexStat stores every faculty under a certain value. These values have to be used for all function of the GoeFlexStatCrawler-Package.
+    ## Below are faculty-labels and the corresponding faculty-numbers
+    Fakultät für Agrarwissenschaften                     11
+    Fakultät für Biologie und Psychologie                9
+    Fakultät für Chemie                                  7
+    Fakultät für Forstwissenschaften und Waldökologie    10
+    Fakultät für Geowissenschaften und Geographie        8
+    Fakultät für Mathematik und Informatik               5
+    Fakultät für Physik                                  6
+    Gemeinsame und Zentrale Einrichtungen                17
+    Juristische Fakultät                                 2
+    Medizinische Fakultät                                3
+    Philosophische Fakultät                              4
+    Sozialwissenschaftliche Fakultät                     13
+    Theologische Fakultät                                1
+    Wirtschaftswissenschaftliche Fakultät                12
 }

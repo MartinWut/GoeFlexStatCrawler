@@ -1,8 +1,8 @@
 #' module_mean
 #'
 #' @description Function for computing the mean value of a specific module
-#' @usage module_mean(semester_vector = "all", faculty_nr, module_nr)
-#'    ## Default S3 method:
+#' @usage module_mean(semester_vector, faculty_nr, module_nr)
+#'    ## Default method:
 #'    module_mean(semester_vector = "all", faculty_nr= NA, module_nr=NA)
 #' @param semester_vector A vector of numeric values. The default value takes all semesters.
 #' @param faculty_nr A numeric value corresponding to a certain faculty. See the function faculty_data to get all facultynumbers.

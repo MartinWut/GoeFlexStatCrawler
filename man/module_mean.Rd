@@ -4,8 +4,8 @@
 \alias{module_mean}
 \title{module_mean}
 \usage{
-module_mean(semester_vector = "all", faculty_nr, module_nr)
-   ## Default S3 method:
+module_mean(semester_vector, faculty_nr, module_nr)
+   ## Default method:
    module_mean(semester_vector = "all", faculty_nr= NA, module_nr=NA)
 }
 \arguments{
