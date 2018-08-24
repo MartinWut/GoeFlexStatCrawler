@@ -13,7 +13,7 @@ date_compare(faculty_nr, module_nr, semester_vector, download, FacData)
 \arguments{
 \item{faculty_nr}{A numeric value corresponding to a certain semester. See the function semester_data to get all semester numbers.}
 
-\item{semester_vector}{A vector of numeric values containing the semester-numbers. By default all semesters are considered. Use the function semester_data to get the specific values.}
+\item{semester_vector}{A character vector vector containing the semester names in the form "WSYY/YY" for winter semester and "SoSeYY" for summer semester (e.g. semester_vector <- c("WS17/18", "SoSe18"). By default all semesters are considered.}
 
 \item{download}{Logical. If TRUE the corresponding data is downloaded and used for computing the module mean values per semester. If False the faculty data has to be provided using the function faculty_down in the first place.}
 

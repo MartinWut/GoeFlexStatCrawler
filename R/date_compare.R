@@ -28,12 +28,12 @@
 
 date_compare <- function(faculty_nr, module_nr, semester_vector="all", download=FALSE, FacData=NA){
 
-  # create error messages for wrong data input (faculty_nr and module)
+  # create error messages for wrong data input (faculty_nr and module_nr)
   # check faculty_nr
   if (any(grepl(faculty_nr, faculty_data("all")$value)) == FALSE){
     stop("The chosen faculty_nr is not in the correct form or does not exist.")
   }
-  # check module
+  # check module_nr
   module_list <- list_modules(faculty_nr)
   if (any(grepl(module_nr, module_list$value)) == FALSE){
     stop("The chosen module number does not exist for the chosen faculty.")
