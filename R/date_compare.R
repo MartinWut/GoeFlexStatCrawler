@@ -1,13 +1,13 @@
 #' date_compare
 #'
-#' @description This is a function for computing the mean values for each exam date per semester over all or some chosen semesters
+#' @description This is a function for computing the mean values for each exam date per semester over all or some chosen semesters.
 #' @usage date_compare(faculty_nr, module_nr, semester_vector, download, FacData)
 #'
 #'   ## Default method:
 #'
 #'   date_compare(faculty_nr, module_nr, semester_vector="all", download=FALSE, FacData=NA)
-#' @param faculty_nr A numeric value corresponding to a certain semester. See the function semester_data to get all semesternumbers.
-#' @param modul_nr A numeric value corresponding to a certain module. See the function list_modules to get all modulenumbers
+#' @param faculty_nr A numeric value corresponding to a certain semester. See the function semester_data to get all semester numbers.
+#' @param modul_nr A numeric value corresponding to a certain module. See the function list_modules to get all module numbers
 #' @param semester_vector A vector of numeric values containing the semester-numbers. By default all semesters are considered. Use the function semester_data to get the specific values.
 #' @param download Logical. If TRUE the corresponding data is downloaded and used for computing the module mean values per semester. If False the faculty data has to be provided using the function faculty_down in the first place.
 #' @param FacData FacData A List containing the faculty or module data. Typically produced by the function faculty_down.

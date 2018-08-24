@@ -11,7 +11,7 @@ date_compare(faculty_nr, module_nr, semester_vector, download, FacData)
   date_compare(faculty_nr, module_nr, semester_vector="all", download=FALSE, FacData=NA)
 }
 \arguments{
-\item{faculty_nr}{A numeric value corresponding to a certain semester. See the function semester_data to get all semesternumbers.}
+\item{faculty_nr}{A numeric value corresponding to a certain semester. See the function semester_data to get all semester numbers.}
 
 \item{semester_vector}{A vector of numeric values containing the semester-numbers. By default all semesters are considered. Use the function semester_data to get the specific values.}
 
@@ -19,13 +19,13 @@ date_compare(faculty_nr, module_nr, semester_vector, download, FacData)
 
 \item{FacData}{FacData A List containing the faculty or module data. Typically produced by the function faculty_down.}
 
-\item{modul_nr}{A numeric value corresponding to a certain module. See the function list_modules to get all modulenumbers}
+\item{modul_nr}{A numeric value corresponding to a certain module. See the function list_modules to get all module numbers}
 }
 \value{
 The Return is an object of class "date_compare" and contains the information of the number exam date (Date 1, Date 2, etc.) of the chosen module and the mean values of the corresponding dates over the chosen semesters.
 }
 \description{
-This is a function for computing the mean values for each exam date per semester over all or some chosen semesters
+This is a function for computing the mean values for each exam date per semester over all or some chosen semesters.
 }
 \examples{
 # Compute the mean values for the different exam dates within a semester for the introductory course in statistics at the economic faculty over all semesters.
