@@ -11,11 +11,11 @@ date_compare(faculty_nr, module_nr, semester_vector, download, FacData)
   date_compare(faculty_nr, module_nr, semester_vector="all", download=FALSE, FacData=NA)
 }
 \arguments{
-\item{faculty_nr}{A numeric value corresponding to a certain semester. See the function semester_data to get all semester numbers.}
+\item{faculty_nr}{A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty numbers.}
 
 \item{semester_vector}{A character vector vector containing the semester names in the form "WSYY/YY" for winter semester and "SoSeYY" for summer semester (e.g. semester_vector <- c("WS17/18", "SoSe18"). By default all semesters are considered.}
 
-\item{download}{Logical. If TRUE the corresponding data is downloaded and used for computing the module mean values per semester. If False the faculty data has to be provided using the function faculty_down in the first place.}
+\item{download}{Logical. If TRUE the corresponding data is downloaded and used for computing the mean values for each exam date per semester. If False the faculty data has to be provided using the function faculty_down in the first place.}
 
 \item{FacData}{FacData A List containing the faculty or module data. Typically produced by the function faculty_down.}
 
@@ -34,9 +34,9 @@ faculty_data() # the required faculty-number is 12
 list_modules(12) # the required module-number is 109
 
 # Computing the mean for the economic faculty without providing any data in advance
-date_compare <- function(faculty_nr = 12, module_nr = 109, semester_vector = "all", download = TRUE)
+date_compare(faculty_nr = 12, module_nr = 109, download = TRUE)
 
 # Downloading the data for economic faculty using the faculty_down-function
 economic_data <- faculty_down(12)
-date_compare <- function(faculty_nr = 12, module_nr = 109, semester_vector = "all", download = FALSE, FacData = economic_data)
+date_compare(faculty_nr = 12, module_nr = 109, download = FALSE, FacData = economic_data)
 }
