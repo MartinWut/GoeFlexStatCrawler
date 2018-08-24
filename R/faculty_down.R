@@ -4,39 +4,7 @@
 #' @usage faculty_down(facultyNr)
 #' @param facultyNr A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty-numbers.
 #' @return A list containing the data of all modules for a certain faculty. Every list-element contains the data for a single module over all semesters.
-#' @examples faculty_down(12) # downloads the data for the economic faculty
 #' @export
-
-# Help-function, needed for the faculty_down_function
-single_request <- function(Semester, Fakultaet, Modul){
-
-  semester_all <- semester_data("all")
-  faculty_all <- faculty_data("all")
-
-  resultsURL <- "https://pruefungsverwaltung.uni-goettingen.de/statistikportal/api/queryexecution/results"
-  requestJSON <- requestJSON_file
-
-  records <- data.frame(matrix(nrow = 0, ncol = 21))
-
-  facultyString <- paste0('"lastValue":"',subset(faculty_all[,2], faculty_all[,1] == Fakultaet | faculty_all[,2] == Fakultaet) , '"') ### Hier den Wert der Fakultät angeben
-  thisRequestJSON <- sub('"lastValue":"12"', facultyString, requestJSON)
-
-  moduleString <- paste0('"lastValue":"', Modul, '"') ### Hier den Wert des Modules angeben
-  thisRequestJSON <- sub('"lastValue":"112"', moduleString, requestJSON)
-
-  semesterString <- paste0('"lastValue":"', subset(semester_all[,2], semester_all[,1] == Semester), '"') ### Hier den Wert des Semesters angeben
-  thisRequestJSON <- sub('"lastValue":"60"', semesterString, thisRequestJSON)
-
-  bodyList <- list(data = thisRequestJSON)
-  request <- POST(resultsURL, body = bodyList, encode = "form")
-  stop_for_status(request)
-
-  responseJSON <- content(request, encoding = "UTF-8", type = "text")
-  responseDataFrame <- fromJSON(responseJSON)$data$records
-  results <<- data.frame(matrix(nrow = max(length(Semester),length(Fakultaet), length(Modul)), ncol = 21))
-  results <- responseDataFrame
-  return(results)
-}
 
 faculty_down <- function(facultyNr){
 
@@ -56,7 +24,7 @@ faculty_down <- function(facultyNr){
       res <- single_request("all", facultyNr, module_all[moduleNr])
 
     }
-    Spaltennamen <- c("2_3" ,"Studienmodul" ,"Nicht bestanden", "Ohne Note", "Notenschnitt (nur Bestanden)", "1_0" ,"1_7", "2_7", "3_7" ,"5_0" ,"4_0", "Klausurtermin", "3_0", "Bestanden", "Prüfer" ,"2_0" ,"Semester","Notenschnitt" ,"3_3", "Anzahl" ,"1_3" )
+    Spaltennamen <- c("2_3" ,"Studienmodul" ,"Nicht bestanden", "Ohne Note", "Notenschnitt (nur Bestanden)", "1_0" ,"1_7", "2_7", "3_7" ,"5_0" ,"4_0", "Klausurtermin", "3_0", "Bestanden", "Pruefer" ,"2_0" ,"Semester","Notenschnitt" ,"3_3", "Anzahl" ,"1_3" )
     colnames(res) <- Spaltennamen
     res <- res[,c(17,12,2,15,20,14,3,18,5,4,6,21,7,16,1,8,13,19,9,11,10)]
     res <- na.omit(res) # Falls NA's entfernt werden sollen -> erzeugt einen Leeren Data.Frame (Falls lediglich NA's für ein Modul vorhanden sind)
@@ -71,3 +39,42 @@ faculty_down <- function(facultyNr){
   # return the result
   return(result_list)
 }
+
+
+#' single_request
+#' @description  Help-function, needed for the faculty_down_function
+#' @usage single_request(Semester,Fakultaet,Modul)
+#' @param Semester A numeric value corresponing to a semester-number.
+#' @param Fakultaet A numeric value corresponing to a faculty-number.
+#' @param Modul A numeric value corresponing to a module-number.
+#' @export
+single_request <- function(Semester, Fakultaet, Modul){
+
+  semester_all <- semester_data("all")
+  faculty_all <- faculty_data("all")
+
+  resultsURL <- "https://pruefungsverwaltung.uni-goettingen.de/statistikportal/api/queryexecution/results"
+  requestJSON <- requestJSON_file
+
+  records <- data.frame(matrix(nrow = 0, ncol = 21))
+
+  facultyString <- paste0('"lastValue":"',subset(faculty_all[,2], faculty_all[,1] == Fakultaet | faculty_all[,2] == Fakultaet) , '"')
+  thisRequestJSON <- sub('"lastValue":"12"', facultyString, requestJSON)
+
+  moduleString <- paste0('"lastValue":"', Modul, '"') ### Hier den Wert des Modules angeben
+  thisRequestJSON <- sub('"lastValue":"112"', moduleString, requestJSON)
+
+  semesterString <- paste0('"lastValue":"', subset(semester_all[,2], semester_all[,1] == Semester), '"')
+  thisRequestJSON <- sub('"lastValue":"60"', semesterString, thisRequestJSON)
+
+  bodyList <- list(data = thisRequestJSON)
+  request <- POST(resultsURL, body = bodyList, encode = "form")
+  stop_for_status(request)
+
+  responseJSON <- content(request, encoding = "UTF-8", type = "text")
+  responseDataFrame <- fromJSON(responseJSON)$data$records
+  results <<- data.frame(matrix(nrow = max(length(Semester),length(Fakultaet), length(Modul)), ncol = 21))
+  results <- responseDataFrame
+  return(results)
+}
+

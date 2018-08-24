@@ -10,7 +10,8 @@
 #' @param semester_vector A character vector vector containing the semester names in the form "WSYY/YY" for winter semester and "SoSeYY" for summer semester (e.g. semester_vector <- c("WS17/18", "SoSe18")). By default all semesters are considered.
 #' @param download Logical. If TRUE the corresponding data is downloaded and used for computing the examiner mean values. If False the faculty data has to be provided using the function faculty_down in the first place.
 #' @param FacData FacData A List containing the faculty or module data. Typically produced by the function faculty_down.
-#' @examples # Compute the mean values for the different examiners for the introductory course in statistics at the economic faculty over all semesters.
+#' @examples # Compute the mean values for the different examiners for the introductory
+#' # course in statistics at the economic faculty over all semesters.
 #'
 #' faculty_data() # the required faculty-number is 12
 #' list_modules(12) # the required module-number is 109

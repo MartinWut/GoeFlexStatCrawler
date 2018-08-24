@@ -11,7 +11,8 @@
 #' @param faculty_nr A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty-numbers.
 #' @param module_nr A numeric value corresponding to a certain module. See the function list_modules to get all modulenumbers.
 #' @return An object of the class "module_mean" containing the mean value of the selected module and the module-name.
-#' @examples # Compute the mean value for the introductory course in statistics at the economic faculty over all semesters.
+#' @examples # Compute the mean value for the introductory
+#' # course in statistics at the economic faculty over all semesters.
 #'
 #' #' faculty_data() # the required faculty-number is 12
 #' list_modules(12) # the required module-number is 109

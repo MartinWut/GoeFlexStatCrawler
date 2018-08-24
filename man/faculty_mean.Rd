@@ -8,7 +8,7 @@ faculty_mean(faculty_nr, download, FacData)
 
    ## Default method:
 
-   module_mean(faculty_nr, download=FALSE, FacData=NA)
+   faculty_mean(faculty_nr, download=FALSE, FacData=NA)
 }
 \arguments{
 \item{faculty_nr}{A numeric value corresponding to a certain semester. See the function semester_data to get all semesternumbers.}

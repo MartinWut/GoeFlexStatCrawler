@@ -24,7 +24,8 @@ examiner_compare(faculty_nr, module_nr, semester_vector="all", download=FALSE, F
 This is a function for computing the mean values for the different examiners for one module over all or some chosen semesters.
 }
 \examples{
-# Compute the mean values for the different examiners for the introductory course in statistics at the economic faculty over all semesters.
+# Compute the mean values for the different examiners for the introductory
+# course in statistics at the economic faculty over all semesters.
 
 faculty_data() # the required faculty-number is 12
 list_modules(12) # the required module-number is 109

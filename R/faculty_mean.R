@@ -5,7 +5,7 @@
 #'
 #'    ## Default method:
 #'
-#'    module_mean(faculty_nr, download=FALSE, FacData=NA)
+#'    faculty_mean(faculty_nr, download=FALSE, FacData=NA)
 #' @param faculty_nr A numeric value corresponding to a certain semester. See the function semester_data to get all semesternumbers.
 #' @param download Logical. If TRUE the corresponding data is downloaded and used for computing the faculty mean value. If False the faculty data has to be provided using the function faculty_down in the first place.
 #' @param FacData A List containing the faculty data. Typically produced by the function faculty_down.
@@ -17,7 +17,6 @@
 #' economic_data <- faculty_down(12)
 #' faculty_mean(12, download = FALSE, FacData = economic_data)
 #' @export
-
 
 faculty_mean <- function(faculty_nr, download=FALSE, FacData=NA){ # download= FALSE bedeutet, dass die Daten vorab geladen wurden. Die Liste mit den Faculty-Daten muss dann unter FacData angegeben werden
 

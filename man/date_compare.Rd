@@ -13,13 +13,13 @@ date_compare(faculty_nr, module_nr, semester_vector, download, FacData)
 \arguments{
 \item{faculty_nr}{A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty numbers.}
 
+\item{module_nr}{A numeric value corresponding to a certain module. See the function list_modules to get all module numbers}
+
 \item{semester_vector}{A character vector vector containing the semester names in the form "WSYY/YY" for winter semester and "SoSeYY" for summer semester (e.g. semester_vector <- c("WS17/18", "SoSe18"). By default all semesters are considered.}
 
 \item{download}{Logical. If TRUE the corresponding data is downloaded and used for computing the mean values for each exam date per semester. If False the faculty data has to be provided using the function faculty_down in the first place.}
 
 \item{FacData}{FacData A List containing the faculty or module data. Typically produced by the function faculty_down.}
-
-\item{modul_nr}{A numeric value corresponding to a certain module. See the function list_modules to get all module numbers}
 }
 \value{
 The Return is an object of class "date_compare" and contains the information of the number exam date (Date 1, Date 2, etc.) of the chosen module and the mean values of the corresponding dates over the chosen semesters.
@@ -28,7 +28,8 @@ The Return is an object of class "date_compare" and contains the information of 
 This is a function for computing the mean values for each exam date per semester over all or some chosen semesters.
 }
 \examples{
-# Compute the mean values for the different exam dates within a semester for the introductory course in statistics at the economic faculty over all semesters.
+# Compute the mean values for the different exam dates within a semester for the introductory
+# course in statistics at the economic faculty over all semesters.
 
 faculty_data() # the required faculty-number is 12
 list_modules(12) # the required module-number is 109
