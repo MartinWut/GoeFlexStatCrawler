@@ -8,7 +8,7 @@
 #' @export
 
 # Help-function, needed for the faculty_down_function
-single_request <- function(Semester, Fakultät, Modul){
+single_request <- function(Semester, Fakultaet, Modul){
 
   semester_all <- semester_data("all")
   faculty_all <- faculty_data("all")
@@ -18,7 +18,7 @@ single_request <- function(Semester, Fakultät, Modul){
 
   records <- data.frame(matrix(nrow = 0, ncol = 21))
 
-  facultyString <- paste0('"lastValue":"',subset(faculty_all[,2], faculty_all[,1] == Fakultät | faculty_all[,2] == Fakultät) , '"') ### Hier den Wert der Fakultät angeben
+  facultyString <- paste0('"lastValue":"',subset(faculty_all[,2], faculty_all[,1] == Fakultaet | faculty_all[,2] == Fakultaet) , '"') ### Hier den Wert der Fakultät angeben
   thisRequestJSON <- sub('"lastValue":"12"', facultyString, requestJSON)
 
   moduleString <- paste0('"lastValue":"', Modul, '"') ### Hier den Wert des Modules angeben
@@ -33,7 +33,7 @@ single_request <- function(Semester, Fakultät, Modul){
 
   responseJSON <- content(request, encoding = "UTF-8", type = "text")
   responseDataFrame <- fromJSON(responseJSON)$data$records
-  results <<- data.frame(matrix(nrow = max(length(Semester),length(Fakultät), length(Modul)), ncol = 21))
+  results <<- data.frame(matrix(nrow = max(length(Semester),length(Fakultaet), length(Modul)), ncol = 21))
   results <- responseDataFrame
   return(results)
 }

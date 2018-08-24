@@ -59,3 +59,4 @@ module_data <- function(semester_nr, faculty_nr, module_nr){
 
   return(responseDF)
 }
+
