@@ -113,8 +113,3 @@ examiner_compare <- function(faculty_nr, module_nr, semester_vector="all", downl
   return(ex_comp)
   }
 
-# define the representation of the date_compare2 function
-print.examiner_compare <- function(obj){
-  cat("Examiner =", obj$Examiner_names, "\n")
-  cat("Mean =", obj$Mean, "\n")
-}
