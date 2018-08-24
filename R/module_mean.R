@@ -1,6 +1,6 @@
 #' module_mean
 #'
-#' @descriptionThe The function downloads the data for a specific module and computes the mean value of this module dependent on the semester-input.
+#' @description The function downloads the data for a specific module and computes the mean value of this module dependent on the semester-input.
 #' By default the functio considers all semesters.
 #' @usage module_mean(semester_vector, faculty_nr, module_nr)
 #'

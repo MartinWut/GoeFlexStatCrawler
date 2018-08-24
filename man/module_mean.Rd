@@ -21,7 +21,8 @@ module_mean(semester_vector, faculty_nr, module_nr)
 An object of the class "module_mean" containing the mean value of the selected module and the module-name.
 }
 \description{
-module_mean
+The function downloads the data for a specific module and computes the mean value of this module dependent on the semester-input.
+By default the functio considers all semesters.
 }
 \examples{
 # Compute the mean value for the introductory course in statistics at the economic faculty over all semesters.
