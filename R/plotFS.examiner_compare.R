@@ -3,7 +3,7 @@
 #' @param x object of class examiner_compare
 #' @export
 
-plotFS.fac_mean <- function(x){
+plotFS.examiner_compare <- function(x){
   df <- data.frame(x[[1]], x[[2]])
   ggplot(test2, aes(x=x..1.., y=x..2..)) +
     geom_point(size=3) +
