@@ -1,3 +1,4 @@
+library(GoeFlexStatCrawler)
 context("modul_data function")
 
 # test, if output is as expected (i.e. output the same as entered directly on FlexStat)
