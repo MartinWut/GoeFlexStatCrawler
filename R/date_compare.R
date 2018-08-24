@@ -36,7 +36,7 @@ date_compare <- function(faculty_nr, module_nr, semester_vector="all", download=
   # check module_nr
   module_list <- list_modules(faculty_nr)
   if (any(grepl(module_nr, module_list$value)) == FALSE){
-    stop("The chosen module number does not exist for the chosen faculty.")
+    stop("The chosen module_nr does not exist for the chosen faculty.")
   }
 
   # create the data depending on the parameters
