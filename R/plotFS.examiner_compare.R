@@ -5,7 +5,7 @@
 
 plotFS.examiner_compare <- function(x){
   df <- data.frame(x[[1]], x[[2]])
-  ggplot(test2, aes(x=x..1.., y=x..2..)) +
+  ggplot(df, aes(x=x..1.., y=x..2..)) +
     geom_point(size=3) +
     geom_segment(aes(x=x..1..,
                      xend=x..1..,
