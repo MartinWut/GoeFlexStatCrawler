@@ -50,5 +50,4 @@ Wirtschaftswissenschaftliche Fakultät                12
 }
 \examples{
 faculty_data("all") # Downloading all faculty-numbers
-faculty_data("Philosophische Fakultät") # Downloading a single faculty-number
 }
