@@ -4,10 +4,12 @@
 \alias{print.fac_mean}
 \title{print faculty mean}
 \usage{
-\method{print}{fac_mean}(obj)
+\method{print}{fac_mean}(x, ...)
 }
 \arguments{
-\item{obj}{faculty mean object}
+\item{x}{faculty mean object}
+
+\item{...}{...}
 }
 \description{
 print faculty mean

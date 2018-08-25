@@ -1,9 +1,10 @@
 #' print faculty mean
 #'
-#' @param obj faculty mean object
+#' @param x faculty mean object
+#' @param ... ...
 #' @export
 
-print.fac_mean <- function(obj){
-  cat("Mean = ", obj$Mean,"\n")
-  cat("Faculty = ", obj$Faculty, "\n")
+print.fac_mean <- function(x,...){
+  cat("Mean = ", x$Mean,"\n")
+  cat("Faculty = ", x$Faculty, "\n")
 }

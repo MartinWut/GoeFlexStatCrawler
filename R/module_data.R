@@ -6,7 +6,8 @@
 #' @param faculty_nr A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty-numbers.
 #' @param module_nr A numeric value corresponding to a certain module. See the function list_modules to get all modulen-umbers.
 #' @return The result is a data.frame containing the data for a module for one semester. Depending on the module, it is possible that there are several rows, containing the data for several exam dates.
-#' @examples  # Download the data for the introductory course in statistics at the economic faculty for the summer semester 2017.
+#' @examples  # Download the data for the introductory
+#' #  course in statistics at the economic faculty for the summer semester 2017.
 #' # First get the information for specific semester-, faculty- and module-number
 #'
 #' semester_data() # the required semester-number is 65

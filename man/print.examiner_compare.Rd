@@ -4,10 +4,12 @@
 \alias{print.examiner_compare}
 \title{print examiner compare}
 \usage{
-\method{print}{examiner_compare}(obj)
+\method{print}{examiner_compare}(x, ...)
 }
 \arguments{
-\item{obj}{eaxaminer_compare object}
+\item{x}{eaxaminer_compare object}
+
+\item{...}{...}
 }
 \description{
 print examiner compare

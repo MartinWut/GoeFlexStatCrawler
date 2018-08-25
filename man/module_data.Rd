@@ -20,7 +20,8 @@ The result is a data.frame containing the data for a module for one semester. De
 The function downloads the data for a specific module given the semester-, faculty- and module-number.
 }
 \examples{
- # Download the data for the introductory course in statistics at the economic faculty for the summer semester 2017.
+ # Download the data for the introductory
+#  course in statistics at the economic faculty for the summer semester 2017.
 # First get the information for specific semester-, faculty- and module-number
 
 semester_data() # the required semester-number is 65

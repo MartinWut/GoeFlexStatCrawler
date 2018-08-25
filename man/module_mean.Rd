@@ -25,7 +25,8 @@ The function downloads the data for a specific module and computes the mean valu
 By default the functio considers all semesters.
 }
 \examples{
-# Compute the mean value for the introductory course in statistics at the economic faculty over all semesters.
+# Compute the mean value for the introductory
+# course in statistics at the economic faculty over all semesters.
 
 #' faculty_data() # the required faculty-number is 12
 list_modules(12) # the required module-number is 109

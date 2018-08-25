@@ -8,7 +8,8 @@ Authors@R: person("Gerle", "Simone", email = "simone.gerle@stud.uni-goettingen.d
 Maintainer: Simone Gerle <simone.gerle@stud.uni-goettingen.de>
 Description: Ausführliche Beschreibung des Package
     Use four spaces when indenting paragraphs within the Description.
-Depends: httr,
+Depends: R (>= 2.10),
+    httr,
     dplyr,
     ggplot2,
     jsonlite,
