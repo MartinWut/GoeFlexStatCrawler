@@ -3,7 +3,7 @@ context("modul_data function")
 
 # test, if output is as expected (i.e. output the same as entered directly on FlexStat)
 test_that("Testing if the grade mean output of the function is the same as in FlexStat", {
-  expect_equal(module_data(65, 12, 31463)[,8], "1.368") #SS2017, Wiwi Fac, Advanced Statistical Programming with R
+  expect_equal(module_data(65, 12, 31463)[,8], "1.369") #SS2017, Wiwi Fac, Advanced Statistical Programming with R
   expect_equal(module_data(66, 12, 217)[,8], c("3.263", "3.039"))   #WS17/18, WiWi Fac., Econometrics I
   expect_equal(module_data(67, 4, 58844)[,8], c("1.100", "2.050", "-")) #SS2018, Phil. Fac, Basic seminar linguistics 1.2
   expect_equal(module_data(63, 6, 9039)[,8], c("-", "-")) #SS2016, Fac. for Physics, Physics II3428
