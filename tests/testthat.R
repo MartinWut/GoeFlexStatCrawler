@@ -1,6 +1,5 @@
-Sys.setenv("R_TESTS" = "")
 library(testthat)
 library(GoeFlexStatCrawler)
 
 testthat::test_check("GoeFlexStatCrawler")
-testthat::test_dir("tests/testthat")
+#testthat::test_dir("tests/testthat")
