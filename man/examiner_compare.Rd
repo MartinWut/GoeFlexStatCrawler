@@ -6,8 +6,9 @@
 \usage{
 examiner_compare(faculty_nr, module_nr, semester_vector, download, FacData)
 
-##Default method
-examiner_compare(faculty_nr, module_nr, semester_vector="all", download=FALSE, FacData=NA)
+  ##Default method
+
+  examiner_compare(faculty_nr, module_nr, semester_vector="all", download=FALSE, FacData=NA)
 }
 \arguments{
 \item{faculty_nr}{A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty numbers.}

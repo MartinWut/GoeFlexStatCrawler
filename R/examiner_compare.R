@@ -3,8 +3,9 @@
 #' @description This is a function for computing the mean values for the different examiners for one module over all or some chosen semesters.
 #' @usage examiner_compare(faculty_nr, module_nr, semester_vector, download, FacData)
 #'
-#' ##Default method
-#' examiner_compare(faculty_nr, module_nr, semester_vector="all", download=FALSE, FacData=NA)
+#'   ##Default method
+#'
+#'   examiner_compare(faculty_nr, module_nr, semester_vector="all", download=FALSE, FacData=NA)
 #' @param faculty_nr A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty numbers.
 #' @param module_nr A numeric value corresponding to a certain module. See the function list_modules to get all module numbers.
 #' @param semester_vector A character vector vector containing the semester names in the form "WSYY/YY" for winter semester and "SoSeYY" for summer semester (e.g. semester_vector <- c("WS17/18", "SoSe18")). By default all semesters are considered.
