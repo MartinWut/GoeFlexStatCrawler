@@ -45,6 +45,10 @@ plotFS.list <- function(x){
         coord_cartesian(ylim=c(min(df$module_means-0.5),max(df$module_means)+0.5)) +
         guides(fill=guide_legend(title=NULL)) +
         theme( axis.text.x = element_blank())
+    }else{
+      if (class(x[[1]]) == "date_compare") {
+
+      }
     }
   }
 }

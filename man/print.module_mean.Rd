@@ -4,10 +4,10 @@
 \alias{print.module_mean}
 \title{module mean}
 \usage{
-\method{print}{module_mean}(obj)
+\method{print}{module_mean}(x, ...)
 }
 \arguments{
-\item{obj}{module mean object}
+\item{x}{module mean object}
 }
 \description{
 module mean
