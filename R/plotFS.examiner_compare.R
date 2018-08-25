@@ -1,6 +1,6 @@
 #' plotFS.examiner_compare
 #'
-#' @param x object of class examiner_compare
+#' @param x An object of the class examiner_compare
 #' @export
 
 plotFS.examiner_compare <- function(x){

@@ -7,7 +7,7 @@
 \method{plotFS}{examiner_compare}(x)
 }
 \arguments{
-\item{x}{object of class examiner_compare}
+\item{x}{An object of the class examiner_compare}
 }
 \description{
 plotFS.examiner_compare

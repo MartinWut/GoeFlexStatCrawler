@@ -7,7 +7,7 @@
 \method{plotFS}{list}(x)
 }
 \arguments{
-\item{x}{Object for class list}
+\item{x}{An object of the class list}
 }
 \description{
 plotFS.list

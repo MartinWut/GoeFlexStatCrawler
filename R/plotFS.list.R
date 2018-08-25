@@ -1,6 +1,6 @@
 #' plotFS.list
 #'
-#' @param x Object for class list
+#' @param x An object of the class list
 #' @export
 
 plotFS.list <- function(x){
