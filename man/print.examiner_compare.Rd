@@ -8,6 +8,8 @@
 }
 \arguments{
 \item{x}{eaxaminer_compare object}
+
+\item{...}{...}
 }
 \description{
 print examiner compare

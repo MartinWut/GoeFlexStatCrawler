@@ -1,6 +1,7 @@
 #' print.date_compare
 #'
 #' @param x An Object of the class date_compare
+#' @param ... ...
 #' @export
 
 # define the representation of the date_compare function

@@ -8,6 +8,8 @@
 }
 \arguments{
 \item{x}{module mean object}
+
+\item{...}{...}
 }
 \description{
 module mean

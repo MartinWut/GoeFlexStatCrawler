@@ -1,6 +1,7 @@
 #' print examiner compare
 #'
 #' @param x eaxaminer_compare object
+#' @param ... ...
 #' @export
 
 # define the representation of the examiner_compare function

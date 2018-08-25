@@ -8,6 +8,8 @@
 }
 \arguments{
 \item{x}{faculty mean object}
+
+\item{...}{...}
 }
 \description{
 print faculty mean

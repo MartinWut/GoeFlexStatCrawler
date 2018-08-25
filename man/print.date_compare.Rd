@@ -8,6 +8,8 @@
 }
 \arguments{
 \item{x}{An Object of the class date_compare}
+
+\item{...}{...}
 }
 \description{
 print.date_compare
