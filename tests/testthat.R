@@ -2,6 +2,7 @@ library(testthat)
 library(GoeFlexStatCrawler)
 
 testthat::test_check("GoeFlexStatCrawler")
+test_dir("tests/testthat")
 
 #test_check("GoeFlexStatCrawler")
 #test_dir("tests/testthat")
