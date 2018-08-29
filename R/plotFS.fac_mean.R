@@ -10,5 +10,6 @@ plotFS.fac_mean <- function(x){
     xlab("Faculty") + ylab("Mean grades") +
     coord_cartesian(ylim=c(min(df$x..1..-0.5),max(df$x..1..)+0.5)) +
     guides(fill=guide_legend(title=NULL)) +
-    ggtitle("Faculty Mean")
+    ggtitle("Faculty Mean") +
+    theme( axis.text.x = element_blank())
 }

@@ -1,6 +1,7 @@
 #' module mean
 #'
 #' @param x module mean object
+#' @param ... ...
 #' @export
 
 # Define the depiction of the module_mean-function
