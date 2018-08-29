@@ -19,7 +19,8 @@ plotFS.list <- function(x){
       xlab("Faculty") + ylab("Mean grades") +
       coord_cartesian(ylim=c(min(df$faculty_means-0.5),max(df$faculty_means)+0.5)) +
       guides(fill=guide_legend(title=NULL)) +
-      ggtitle("Comparison of faculty means")
+      ggtitle("Comparison of faculty means") +
+      theme( axis.text.x = element_blank())
 
   }else{
     if (class(x[[1]]) == "module_mean") {
@@ -45,10 +46,6 @@ plotFS.list <- function(x){
         coord_cartesian(ylim=c(min(df$module_means-0.5),max(df$module_means)+0.5)) +
         guides(fill=guide_legend(title=NULL)) +
         theme( axis.text.x = element_blank())
-    }else{
-      if (class(x[[1]]) == "date_compare") {
-
-      }
     }
   }
 }
