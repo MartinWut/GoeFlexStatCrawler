@@ -8,7 +8,7 @@
 #'   date_compare(faculty_nr, module_nr, semester_vector="all", download=FALSE, FacData=NA)
 #' @param faculty_nr A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty numbers.
 #' @param module_nr A numeric value corresponding to a certain module. See the function list_modules to get all module numbers
-#' @param semester_vector A character vector vector containing the semester names in the form "WSYY/YY" for winter semester and "SoSeYY" for summer semester (e.g. semester_vector <- c("WS17/18", "SoSe18"). By default all semesters are considered.
+#' @param semester_vector A vector of numeric values containing the semester-numbers. By default all semesters are considered. Use the function semester_data to get the specific values.
 #' @param download Logical. If TRUE the corresponding data is downloaded and used for computing the mean values for each exam date per semester. If False the faculty data has to be provided using the function faculty_down in the first place.
 #' @param FacData FacData A List containing the faculty or module data. Typically produced by the function faculty_down.
 #' @return The Return is an object of class "date_compare" and contains the information of the number exam date (Date 1, Date 2, etc.) of the chosen module and the mean values of the corresponding dates over the chosen semesters.

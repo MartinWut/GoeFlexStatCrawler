@@ -43,4 +43,3 @@ semester_data <- function(semester="all"){ # input either "all" or a certain sem
   }
 }
 
-NULL

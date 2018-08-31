@@ -7,7 +7,7 @@
 #'    ## Default method:
 #'
 #'    module_mean(semester_vector = "all", faculty_nr= NA, module_nr=NA)
-#' @param semester_vector A vector of numeric values containing the semester-numbers . By default all semesters are considered. Use the function semester_data to get the specific values.
+#' @param semester_vector A vector of numeric values containing the semester-numbers. By default all semesters are considered. Use the function semester_data to get the specific values.
 #' @param faculty_nr A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty-numbers.
 #' @param module_nr A numeric value corresponding to a certain module. See the function list_modules to get all modulenumbers.
 #' @return An object of the class "module_mean" containing the mean value of the selected module and the module-name.

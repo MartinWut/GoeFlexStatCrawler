@@ -8,7 +8,7 @@
 #'   examiner_compare(faculty_nr, module_nr, semester_vector="all", download=FALSE, FacData=NA)
 #' @param faculty_nr A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty numbers.
 #' @param module_nr A numeric value corresponding to a certain module. See the function list_modules to get all module numbers.
-#' @param semester_vector A character vector vector containing the semester names in the form "WSYY/YY" for winter semester and "SoSeYY" for summer semester (e.g. semester_vector <- c("WS17/18", "SoSe18")). By default all semesters are considered.
+#' @param semester_vector A vector of numeric values containing the semester-numbers. By default all semesters are considered. Use the function semester_data to get the specific values.
 #' @param download Logical. If TRUE the corresponding data is downloaded and used for computing the examiner mean values. If False the faculty data has to be provided using the function faculty_down in the first place.
 #' @param FacData FacData A List containing the faculty or module data. Typically produced by the function faculty_down.
 #' @examples # Compute the mean values for the different examiners for the introductory
@@ -46,25 +46,30 @@ examiner_compare <- function(faculty_nr, module_nr, semester_vector="all", downl
   }else{
     if (download==TRUE){
 
-      # replace semester names by semester values
-      if (semester_vector == "all"){
-        semester_list <- lapply(semester_vector, semester_data)
-        semester_nr <- semester_list[[1]][,2]
-      }else{
-        sem_replace <- gsub("WS", "WS 20", semester_vector)
-        sem_replace <- gsub("/", "/20", sem_replace)
-        sem_replace <- gsub("SoSe", "SS 20", sem_replace)
-        semester_nr <- unlist(lapply(sem_replace, semester_data))
-      }
-
       # use module_data function to get the data for the chosen module and semesters
-      FacData <- lapply(semester_nr, module_data, faculty = faculty_nr, module = module_nr)
+      FacData <- lapply(semester_vector, module_data, faculty = faculty_nr, module = module_nr)
     } #else: FacData = FacData if download = FALSE and data provided
   }
 
-  # check semester_vector (create error messages for wrong data input)
+  ## find the correponding semester names for the semester values in the semester vector
+  semester_all <- semester_data("all")
+  semester_all <- semester_all[nrow(semester_all):1, ] # order semester_all with smallest semester value as the first and largest semester value as the last entry
+
+  # create index variable to find the semester entries in semester all corresponding to the semester_vector values
+  index_df <- c()
   for (i in 1:length(semester_vector)) {
-    if (semester_vector != "all" && any(grepl(semester_vector[i], FacData)) == FALSE){
+    index_df[i] <- which(semester_all$value == semester_vector[i])
+  }
+
+  # extract the semester names from semester_all which correspond to the values in semester_vector and and change the names to the same form they have in the FacData variable ("WSYY/YY" for winter semester and "SoSeYY" for summer semester)
+  semester_names <- semester_all$label[index_df]
+  semester_names <- gsub("WS 20","WS", semester_names)
+  semester_names <- gsub("/20", "/", semester_names)
+  semester_names <- gsub("SS 20", "SoSe", semester_names)
+
+  # check semester_vector (create error messages for wrong data input)
+  for (i in 1:length(semester_names)) {
+    if (semester_vector != "all" && any(grepl(semester_names[i], FacData)) == FALSE){
       stop("One or more semester entries of the semester_vector were not entered in the correct form or
            are not available for the chosen module.")
     }
@@ -95,8 +100,8 @@ examiner_compare <- function(faculty_nr, module_nr, semester_vector="all", downl
     sub_df <- data.frame(semester_entries=character(), examiner_entries=character(), grade_entries=numeric())
     # subset data frame
     for (i in 1:length(res_df$semester_entries)) {
-      for (j in 1:length(semester_vector)) {
-        if (res_df$semester_entries[i] == semester_vector[j]){
+      for (j in 1:length(semester_names)) {
+        if (res_df$semester_entries[i] == semester_names[j]){
           sub_df <- rbind(sub_df, res_df[i,])
         }
       }

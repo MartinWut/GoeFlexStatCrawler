@@ -6,7 +6,7 @@
 #'    ## Default method:
 #'
 #'    faculty_mean(faculty_nr, download=FALSE, FacData=NA)
-#' @param faculty_nr A numeric value corresponding to a certain semester. See the function semester_data to get all semesternumbers.
+#' @param faculty_nr A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty numbers.
 #' @param download Logical. If TRUE the corresponding data is downloaded and used for computing the faculty mean value. If False the faculty data has to be provided using the function faculty_down in the first place.
 #' @param FacData A List containing the faculty data. Typically produced by the function faculty_down.
 #' @return The Return is an object of class "fac_mean" and contains the mean value of the faculty and the faculty-name.
