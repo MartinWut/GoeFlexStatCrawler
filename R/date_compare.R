@@ -54,6 +54,7 @@ date_compare <- function(faculty_nr, module_nr, semester_vector="all", download=
 
   ## find the correponding semester names for the semester values in the semester vector
   semester_all <- semester_data("all")
+  semester_all <- semester_all[nrow(semester_all):1, ] # order semester_all with smallest semester value as the first and largest semester value as the last entry
 
   # create index variable to find the semester entries in semester all corresponding to the semester_vector values
   index_df <- c()
@@ -81,6 +82,7 @@ date_compare <- function(faculty_nr, module_nr, semester_vector="all", download=
   start_val <- regexpr(" ", module_info$label)[1] + 1 #get first letter of course name = first letter after first whitespace (after module label, e.g "M-WIWI...")
   stop_val <- nchar(module_info$label)
   module_name <- substr(module_info$label, start_val, stop_val)
+
   # extract semesters for all modul entries and reorder the resulting vector bottom-up
   # to have the semester entries for the first exam dates always listed first
   sem_info <- unlist(sapply(FacData, function(x)x[1][x[3] == module_name]))
@@ -96,7 +98,6 @@ date_compare <- function(faculty_nr, module_nr, semester_vector="all", download=
   mean_info  <- unlist(sapply(FacData, function(x)x[8][x[3] == module_name]))
   mean_info <- mean_info[length(mean_info):1]
   mean_info <- as.numeric(gsub("-", NA, mean_info))
-  # mean_info <- as.numeric(gsub("", NA, mean_info))
 
   # save semester, date and mean information in a data frame
   info_df <- na.omit(data.frame(sem_info,date_info, mean_info))
@@ -110,7 +111,7 @@ date_compare <- function(faculty_nr, module_nr, semester_vector="all", download=
   }
   info_df$count_var <- count_var
 
-  # if not all semester shall be considered, create a subset of info_df for the corresponding semesters
+  # if not all semesters shall be considered, create a subset of info_df for the corresponding semesters
   if (semester_vector != "all"){
     sub_df <- data.frame(sem_info=character(), date_info=character(), mean_info=numeric(), count_var=integer())
     # subset data frame
