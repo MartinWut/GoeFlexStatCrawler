@@ -28,7 +28,17 @@
 
 examiner_compare <- function(faculty_nr, module_nr, semester_vector="all", download=FALSE, FacData=NA){
 
-  # create error messages for wrong data input (faculty_nr and module_nr)
+  ## if semester_vector = "all", replace "all" by all semester values
+  semester_all <- semester_data("all")
+  semester_all <- semester_all[nrow(semester_all):1, ] # order semester_all with smallest semester value as the first and largest semester value as the last entry
+
+  if (semester_vector == "all"){
+    sem_vec <- semester_all[, 2]
+  } else{
+    sem_vec <- semester_vector
+  }
+
+  ## create error messages for wrong data input (faculty_nr and module_nr)
   # check faculty_nr
   if (any(grepl(faculty_nr, faculty_data("all")$value)) == FALSE){
     stop("The chosen faculty_nr is not in the correct form or does not exist.")
@@ -47,18 +57,15 @@ examiner_compare <- function(faculty_nr, module_nr, semester_vector="all", downl
     if (download==TRUE){
 
       # use module_data function to get the data for the chosen module and semesters
-      FacData <- lapply(semester_vector, module_data, faculty = faculty_nr, module = module_nr)
+      FacData <- lapply(sem_vec, module_data, faculty = faculty_nr, module = module_nr)
     } #else: FacData = FacData if download = FALSE and data provided
   }
 
   ## find the correponding semester names for the semester values in the semester vector
-  semester_all <- semester_data("all")
-  semester_all <- semester_all[nrow(semester_all):1, ] # order semester_all with smallest semester value as the first and largest semester value as the last entry
-
   # create index variable to find the semester entries in semester all corresponding to the semester_vector values
   index_df <- c()
-  for (i in 1:length(semester_vector)) {
-    index_df[i] <- which(semester_all$value == semester_vector[i])
+  for (i in 1:length(sem_vec)) {
+    index_df[i] <- which(semester_all$value == sem_vec[i])
   }
 
   # extract the semester names from semester_all which correspond to the values in semester_vector and and change the names to the same form they have in the FacData variable ("WSYY/YY" for winter semester and "SoSeYY" for summer semester)
@@ -76,20 +83,22 @@ examiner_compare <- function(faculty_nr, module_nr, semester_vector="all", downl
     }
 
   #replace module_nr by module name
-  module_list <- list_modules(faculty_nr)
   module_info <- module_list[grepl(module_nr, module_list$value) == TRUE, ]
   start_val <- regexpr(" ", module_info$label)[1] + 1 #get first letter of course name = first letter after first whitespace (after module label, e.g "M-WIWI...")
   stop_val <- nchar(module_info$label)
   module_name <- substr(module_info$label, start_val, stop_val)
 
   # extract semesters for all modul entries
-  semester_entries <- unlist(sapply(FacData, function(x)x[1][x[3] == module_name]))
+  semester_entries <- unlist(sapply(FacData, function(x)x[1][x[3] == module_name])) #if download = TRUE, we get a matrix object
+  semester_entries <- as.character(semester_entries)
 
   # extract examiner names for all modul entries
-  examiner_entries <- unlist(sapply(FacData, function(x)x[4][x[3] == module_name]))
+  examiner_entries <- unlist(sapply(FacData, function(x)x[4][x[3] == module_name])) #if download = TRUE, we get a matrix object
+  examiner_entries <- as.character(examiner_entries)
 
   # extract the grade means for all modul entries and replace the missing values by NAs
-  grade_entries <- unlist(sapply(FacData, function(x)x[8][x[3] == module_name]))
+  grade_entries <- unlist(sapply(FacData, function(x)x[8][x[3] == module_name])) #if download = TRUE, we get a matrix object
+  grade_entries <- as.character(grade_entries)
   grade_entries <- as.numeric(gsub("-", NA,  grade_entries))
 
   # save examiner names and the corresponding grade means in a data frame

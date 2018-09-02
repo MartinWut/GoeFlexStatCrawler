@@ -27,9 +27,20 @@
 #' @export
 
 
+
 date_compare <- function(faculty_nr, module_nr, semester_vector="all", download=FALSE, FacData=NA){
 
-  # create error messages for wrong data input (faculty_nr and module_nr)
+  ## ## if semester_vector = "all", replace "all" by all semester values
+  semester_all <- semester_data("all")
+  semester_all <- semester_all[nrow(semester_all):1, ] # order semester_all with smallest semester value as the first and largest semester value as the last entry
+
+  if (semester_vector == "all"){
+    sem_vec <- semester_all[, 2]
+  } else{
+    sem_vec <- semester_vector
+  }
+
+  ## create error messages for wrong data input (faculty_nr and module_nr)
   # check faculty_nr
   if (any(grepl(faculty_nr, faculty_data("all")$value)) == FALSE){
     stop("The chosen faculty_nr is not in the correct form or does not exist.")
@@ -48,18 +59,15 @@ date_compare <- function(faculty_nr, module_nr, semester_vector="all", download=
     if (download==TRUE){
 
       # use module_data function to get the data for the chosen mosule and semesters
-      FacData <- lapply(semester_vector, module_data, faculty = faculty_nr, module = module_nr)
+      FacData <- lapply(sem_vec, module_data, faculty = faculty_nr, module = module_nr)
     } #else: FacData = FacData if download = FALSE and data provided
   }
 
   ## find the correponding semester names for the semester values in the semester vector
-  semester_all <- semester_data("all")
-  semester_all <- semester_all[nrow(semester_all):1, ] # order semester_all with smallest semester value as the first and largest semester value as the last entry
-
-  # create index variable to find the semester entries in semester all corresponding to the semester_vector values
+  # create index variable to find the semester entries in semester_all corresponding to the semester_vector values
   index_df <- c()
-  for (i in 1:length(semester_vector)) {
-    index_df[i] <- which(semester_all$value == semester_vector[i])
+  for (i in 1:length(sem_vec)) {
+    index_df[i] <- which(semester_all$value == sem_vec[i])
   }
 
   # extract the semester names from semester_all which correspond to the values in semester_vector and and change the names to the same form they have in the FacData variable ("WSYY/YY" for winter semester and "SoSeYY" for summer semester)
