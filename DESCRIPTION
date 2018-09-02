@@ -6,8 +6,13 @@ Date: 2018-09-03
 Authors@R: person("Gerle", "Simone", email = "simone.gerle@stud.uni-goettingen.d",role = c("aut", "cre"))
            person("Wutke", "Martin", email = "simone.gerle@stud.uni-goettingen.d",role = c("aut", "cre"))
 Maintainer: Simone Gerle <simone.gerle@stud.uni-goettingen.de>
-Description: Ausführliche Beschreibung des Package
-    Use four spaces when indenting paragraphs within the Description.
+Description: This package is used for downloading and analysing the data provided by the statistical platform FlexStat.
+    FlexStat is a statistical platform used and maintained by the Georg-August-University of Goettingen. 
+    'By using the GoeFlexStatCrawler Package,
+    'it is possible to download the exam information for a specific module, faculty or examiners.
+    'For most of the package-fucntions it is necessary to enter a numeric value for a certain semester, facutly or module.
+    'These values can be obtained by using the fucntions semester_data, faculty_data and list_modules.
+    'See the help files of these functions to get further information
 Depends: R (>= 2.10),
     httr,
     dplyr,

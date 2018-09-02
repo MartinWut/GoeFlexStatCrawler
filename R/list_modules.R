@@ -15,7 +15,7 @@
 
 list_modules <- function(faculty){
 
-  # Maipulate the FlexStat-URL
+  # Manipulate the FlexStat-URL
 
   module_url <- "https://pruefungsverwaltung.uni-goettingen.de/statistikportal/api/dropdownvalues?_dc=1525710933664&type=STUDIENMODUL&path=FAK%3D12&selectAllDummy=false&forQueryId=215&page=1&start=0&limit=25"
 

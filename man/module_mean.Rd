@@ -11,7 +11,7 @@ module_mean(semester_vector, faculty_nr, module_nr)
    module_mean(semester_vector = "all", faculty_nr= NA, module_nr=NA)
 }
 \arguments{
-\item{semester_vector}{A vector of numeric values containing the semester-numbers . By default all semesters are considered. Use the function semester_data to get the specific values.}
+\item{semester_vector}{A vector of numeric values containing the semester-numbers. By default all semesters are considered. Use the function semester_data to get the specific values.}
 
 \item{faculty_nr}{A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty-numbers.}
 

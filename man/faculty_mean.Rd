@@ -11,7 +11,7 @@ faculty_mean(faculty_nr, download, FacData)
    faculty_mean(faculty_nr, download=FALSE, FacData=NA)
 }
 \arguments{
-\item{faculty_nr}{A numeric value corresponding to a certain semester. See the function semester_data to get all semesternumbers.}
+\item{faculty_nr}{A numeric value corresponding to a certain faculty. See the function faculty_data to get all faculty numbers.}
 
 \item{download}{Logical. If TRUE the corresponding data is downloaded and used for computing the faculty mean value. If False the faculty data has to be provided using the function faculty_down in the first place.}
 

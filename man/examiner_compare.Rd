@@ -15,7 +15,7 @@ examiner_compare(faculty_nr, module_nr, semester_vector, download, FacData)
 
 \item{module_nr}{A numeric value corresponding to a certain module. See the function list_modules to get all module numbers.}
 
-\item{semester_vector}{A character vector vector containing the semester names in the form "WSYY/YY" for winter semester and "SoSeYY" for summer semester (e.g. semester_vector <- c("WS17/18", "SoSe18")). By default all semesters are considered.}
+\item{semester_vector}{A vector of numeric values containing the semester-numbers. By default all semesters are considered. Use the function semester_data to get the specific values.}
 
 \item{download}{Logical. If TRUE the corresponding data is downloaded and used for computing the examiner mean values. If False the faculty data has to be provided using the function faculty_down in the first place.}
 
